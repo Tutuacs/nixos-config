@@ -10,20 +10,16 @@
     initrd = {
       availableKernelModules = [
       "ata_piix"
-      "ohci_pci" 
-      "ehci_pci" 
-      "ahci" 
-      "sd_mod" 
+      "ohci_pci"
+      "ehci_pci"
+      "ahci"
+      "sd_mod"
       "sr_mod"
       ];
       kernelModules = [ ];
     };
     kernelModules = [ ];
     extraModulePackages = [ ];
-    # kernelParams = [
-    #   "systemd.mask=systemd-vconsole-setup.service"
-    #   "systemd.mask=dev-tpmrm0.device"
-    # ];
   };
 
   fileSystems."/" =

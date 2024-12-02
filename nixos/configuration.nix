@@ -67,9 +67,10 @@
 
   services = {
     displayManager = {
+      enable = true;
       autoLogin = {
-        enable = true;
-        user = "pdi";
+		    enable = true;
+		    user = "pdi";
       };
     };
     xserver = {
@@ -86,8 +87,8 @@
       };
       # Configure keymap in X11
       xkb = {
-        layout = "us";
-        variant = "";
+        layout = "br";
+        variant = "nodeadkeys";
       };
     };
     printing = {
@@ -121,7 +122,7 @@
   users.users = {
     # FIXME: Replace with your username
     pdi = {
-      initialPassword = "123";
+      initialPassword = "@istmecatronica";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
@@ -145,7 +146,7 @@
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
   services.openssh = {
-    enable = true;
+    enable = false;
     settings = {
       # Opinionated: forbid root login through SSH.
       PermitRootLogin = "no";
@@ -158,12 +159,17 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    git
+    # hyprland
     # vscode
+    waybar
+    alejandra
     nixd
+    git
     direnv
+    oh-my-posh
+    zsh 
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
