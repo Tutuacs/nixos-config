@@ -122,7 +122,7 @@
   users.users = {
     # FIXME: Replace with your username
     pdi = {
-      initialPassword = "@istmecatronica";
+      initialPassword = "@123";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
@@ -161,7 +161,7 @@
   environment.systemPackages = with pkgs; [
     # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    # hyprland
+    hyprland
     # vscode
     waybar
     alejandra
@@ -170,7 +170,11 @@
     direnv
     oh-my-posh
     zsh 
+    home-manager
   ];
+
+  programs.hyprland.enable = true;
+  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";

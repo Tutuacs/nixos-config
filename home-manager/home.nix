@@ -51,20 +51,50 @@
     homeDirectory = "/home/pdi";
     packages = with pkgs; [
       vscode
+      waybar
+      waybar
+      hyprland
+      kitty
     ];
   };
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
-  programs.hyprland.enable = true;
+  # programs.hyprland.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+
+    plugins = [
+      inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+    ];
+
+    settings = {
+      "plugin:borders-plus-plus" = {
+        add_borders = 1; # 0 - 9
+
+        # you can add up to 9 borders
+        "col.border_1" = "rgb(ffffff)";
+        "col.border_2" = "rgb(2222ff)";
+
+        # -1 means "default" as in the one defined in general:border_size
+        border_size_1 = 10;
+        border_size_2 = -1;
+
+        # makes outer edges match rounding of the parent. Turn on / off to better understand. Default = on.
+        natural_rounding = "yes";
+
+        monitor = ", 1920x1080@60, 0x0, 1";
+      };
+    };
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.05";
