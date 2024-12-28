@@ -79,7 +79,7 @@
           # "$launcher" = "pkill rofi || rofi -show drun -modi drun,filebrowser,run,window -theme $XDG_CONFIG_HOME/rofi/launchers/type-4/style-3.rasi";
           "$launcher" = "pkill rofi || rofi -show drun -modi drun,filebrowser,run,window -theme $XDG_CONFIG_HOME/rofi/launchers/type-2/style-2.rasi";
           "$term" = "${getExe pkgs.${terminal}}";
-          "$editor" = "code --disable-gpu";
+          "$editor" = "code"; # ! Disable GPU ???? "code --disable-gpu"
           "$file" = "$term -e lf";
           "$browser" = "firefox";
 
@@ -341,7 +341,7 @@
               "ALT, return, fullscreen" # toggle the window on focus to fullscreen
               "$mainMod ALT, L, exec, hyprlock" # lock screen
               "$mainMod, backspace, exec, wlogout -b 4" # logout menu
-              "$CONTROL, ESCAPE, exec, killall waybar || waybar" # toggle waybar
+              # "$CONTROL, ESCAPE, exec, killall waybar || waybar" # ! toggle waybar 
 
               "$mainMod, Return, exec, $term"
               "$mainMod, T, exec, $term"
@@ -359,7 +359,7 @@
               "$mainMod SHIFT, N, exec, swaync-client -t -sw" # swayNC panel
               "$mainMod SHIFT, Q, exec, swaync-client -t -sw" # swayNC panel
               "$mainMod, G, exec, $hyprScriptsDir/gamelauncher.sh" # game launcher
-              "$mainMod ALT, G, exec, $hyprScriptsDir/gamemode.sh" # disable hypr effects for gamemode
+              "$mainMod ALT, G, exec, $hyprScriptsDir/gamemode.sh" # disable hypr effects for gamemodeG
               "$mainMod, V, exec, $hyprScriptsDir/ClipManager.sh" # Clipboard Manager
               "$mainMod, M, exec, pkill -x rofi || $hyprScriptsDir/rofimusic.sh" # online music
               "$mainMod SHIFT, M, exec, pkill -x rofi || $hyprScriptsDir/rofimusic.sh" # online music

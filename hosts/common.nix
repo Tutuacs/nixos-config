@@ -142,7 +142,7 @@ in {
   console.keyMap = kbdLayout; # Configure console keymap
   services.xserver.xkb = {
     layout = "us";
-    variant = "";
+    variant = "nodeadkeys";
   };
 
   security = {
@@ -174,8 +174,8 @@ in {
     sddm = {
       enable = true;
       wayland.enable = true;
-      theme = "tokyo-night";
-      settings.Theme.CursorTheme = "Bibata-Modern-Classic";
+      theme = "sugar-dark";
+      # settings.Theme.CursorTheme = "Bibata-Modern-Classic";
     };
   };
 
