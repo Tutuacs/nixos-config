@@ -142,7 +142,7 @@ in {
   console.keyMap = kbdLayout; # Configure console keymap
   services.xserver.xkb = {
     layout = "us";
-    variant = "nodeadkeys";
+    variant = "";
   };
 
   security = {
@@ -175,7 +175,7 @@ in {
       enable = true;
       wayland.enable = true;
       theme = "sugar-dark";
-      # settings.Theme.CursorTheme = "Bibata-Modern-Classic";
+      settings.Theme.CursorTheme = "Bibata-Modern-Amber"; # ? Comment to unactivate CursorTheme?
     };
   };
 
