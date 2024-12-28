@@ -17,6 +17,7 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils"; # NOTE Temp until fixed upstream
   };
 
   outputs = {
@@ -27,7 +28,7 @@
     # User configuration
     username = "tutuacs"; # WARNING REPLACE THIS WITH YOUR USERNAME IF MANUALLY INSTALLING
     terminal = "kitty"; # alacritty or kitty
-    wallpaper = "marin.jpg"; # see modules/themes/wallpapers
+    wallpaper = "marin.png"; # see modules/themes/wallpapers
 
     # System configuration
     hostname = "nixos"; # CHOOSE A HOSTNAME HERE (default is fine)

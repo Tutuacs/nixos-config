@@ -21,8 +21,6 @@ in {
     ../modules/programs/shell/bash
     ../modules/programs/shell/zsh
     ../modules/programs/browser/firefox
-    # ../modules/programs/editor/nixvim
-    ../modules/programs/editor/vscode
     ../modules/programs/cli/starship
     ../modules/programs/cli/tmux
     ../modules/programs/cli/direnv
@@ -60,7 +58,7 @@ in {
       xdg.enable = true;
       home.username = username;
       home.homeDirectory = "/home/${username}";
-      home.stateVersion = "24.11"; # Please read the comment before changing.
+      home.stateVersion = "23.11"; # Please read the comment before changing.
       home.sessionVariables = {
         EDITOR = "nvim";
         BROWSER = "firefox";
@@ -340,7 +338,7 @@ in {
       # Garbage Collection
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 3d";
+      options = "--delete-older-than 7d";
     };
     optimise.automatic = true;
     package = pkgs.nixVersions.stable;
